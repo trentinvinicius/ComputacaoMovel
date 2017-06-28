@@ -2,23 +2,13 @@ package com.example.vinicius.trabalhofinal;
 
 import android.content.Intent;
 import android.database.Cursor;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.Gravity;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.Button;
 import android.widget.GridView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import org.eclipse.paho.android.service.MqttAndroidClient;
-import org.eclipse.paho.client.mqttv3.IMqttActionListener;
-import org.eclipse.paho.client.mqttv3.IMqttToken;
-import org.eclipse.paho.client.mqttv3.MqttClient;
-import org.eclipse.paho.client.mqttv3.MqttException;
 
 import java.util.ArrayList;
 
@@ -26,7 +16,6 @@ public class InicialActivity extends AppCompatActivity {
     ArrayList<String> nomes;
     ArrayList<byte[]> fotos;
     TextView tvReservatorio, tvSair;
-    static int mensagemExibida = 0;
 
 
     @Override
@@ -38,7 +27,6 @@ public class InicialActivity extends AppCompatActivity {
         tvSair = (TextView) findViewById(R.id.tvSair);
 
         BancoController bc = new BancoController(getBaseContext());
-        bc.inserirGerais(60);
 
         final Cursor cursor = bc.carregaDadosPotes();   //"POTES"
 
@@ -87,12 +75,14 @@ public class InicialActivity extends AppCompatActivity {
                 Intent intent = new Intent(InicialActivity.this, ReservatorioActivity.class);
                 startActivity(intent);
                 finish();
+
             }
         });
 
         this.tvSair.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                MeuMqtt.disconnect();
                 finish();
             }
         });

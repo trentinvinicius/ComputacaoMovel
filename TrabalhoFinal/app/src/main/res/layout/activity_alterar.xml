@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorFundo">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Voltar"
+        android:id="@+id/tvVoltarAlterarPote"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="10dp"/>
+
+    <ImageView
+        android:layout_width="170dp"
+        android:layout_height="170dp"
+        android:scaleType="fitXY"
+        android:id="@+id/ivFotoAlterar"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="29dp"
+        android:layout_marginTop="56dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Alterar Foto"
+        android:id="@+id/tvAlterarFoto"
+        android:layout_gravity="center_horizontal"
+        android:layout_alignStart="@+id/ivFotoAlterar"
+        android:layout_below="@+id/ivFotoAlterar"
+        android:layout_alignEnd="@+id/ivFotoAlterar"
+        android:gravity="center_horizontal"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nome: "
+        android:id="@+id/textView6"
+        android:layout_centerVertical="true"
+        android:layout_alignParentTop="@+id/tvAlterarFoto"
+        android:layout_alignStart="@+id/ivFotoAlterar" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/etNome"
+        android:layout_centerVertical="true"
+        android:layout_alignEnd="@+id/tvVoltarAlterarPote"
+        android:layout_toEndOf="@+id/textView6" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tipo de irrigação: "
+        android:id="@+id/textView4"
+        android:layout_below="@+id/etNome"
+        android:layout_alignStart="@+id/textView6"
+        android:layout_marginTop="15dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Threshold"
+        android:id="@+id/textView8"
+        android:layout_alignTop="@+id/textView4"
+        android:layout_toEndOf="@+id/textView5" />
+
+    <Switch
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/sTipo"
+        android:checked="false"
+        android:layout_alignTop="@+id/textView8"
+        android:layout_alignEnd="@+id/btAlterarAlterarPote" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Diário"
+        android:id="@+id/textView9"
+        android:layout_marginLeft="15dp"
+        android:layout_alignTop="@+id/sTipo"
+        android:layout_alignEnd="@+id/tvVoltarAlterarPote" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New Text"
+        android:id="@+id/tvTipoIrrigacaoAlterarPote"
+        android:layout_below="@+id/sTipo"
+        android:layout_alignStart="@+id/textView4"
+        android:layout_marginTop="15dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/etValor"
+        android:layout_below="@+id/sTipo"
+        android:layout_alignEnd="@+id/textView9"
+        android:layout_toEndOf="@+id/btLimparAlterarPote" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Quantidade de água: "
+        android:id="@+id/textView5"
+        android:layout_below="@+id/etValor"
+        android:layout_alignStart="@+id/tvTipoIrrigacaoAlterarPote"
+        android:layout_marginTop="15dp"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/etQntAgua"
+        android:layout_below="@+id/etValor"
+        android:layout_alignStart="@+id/etValor"
+        android:layout_toStartOf="@+id/textView10" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="(ml)"
+        android:id="@+id/textView10"
+        android:layout_alignTop="@+id/textView5"
+        android:layout_alignEnd="@+id/textView9" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:text="Limpar"
+        android:layout_marginLeft="80dp"
+        android:id="@+id/btLimparAlterarPote"
+        android:gravity="center_horizontal|center_vertical"
+        android:layout_alignTop="@+id/btAlterarAlterarPote"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:text="Alterar"
+        android:id="@+id/btAlterarAlterarPote"
+        android:layout_marginBottom="40dp"
+        android:layout_marginRight="80dp"
+        android:gravity="center_horizontal|center_vertical"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView2"
+        android:layout_above="@+id/btLimparAlterarPote"
+        android:layout_alignParentStart="true"
+        android:layout_alignTop="@+id/btLimparAlterarPote"
+        android:layout_alignParentEnd="true" />
+
+
+</RelativeLayout>

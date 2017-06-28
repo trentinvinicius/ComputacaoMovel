@@ -15,7 +15,6 @@ import org.eclipse.paho.client.mqttv3.IMqttActionListener;
 import org.eclipse.paho.client.mqttv3.IMqttDeliveryToken;
 import org.eclipse.paho.client.mqttv3.IMqttToken;
 import org.eclipse.paho.client.mqttv3.MqttCallback;
-import org.eclipse.paho.client.mqttv3.MqttClient;
 import org.eclipse.paho.client.mqttv3.MqttConnectOptions;
 import org.eclipse.paho.client.mqttv3.MqttException;
 import org.eclipse.paho.client.mqttv3.MqttMessage;
@@ -27,7 +26,7 @@ import java.util.ArrayList;
 /**
  * Created by vinicius on 15.06.17.
  */
-public class MeuMqtt extends Service implements MqttCallback, IMqttActionListener {
+public class MeuMqtt3 extends Service implements MqttCallback, IMqttActionListener {
     private final IBinder binder = new MyBinder();
 
     private MqttAndroidClient mqttClient;
@@ -48,14 +47,14 @@ public class MeuMqtt extends Service implements MqttCallback, IMqttActionListene
     Context context;
     private String broker_url = "tcp://iot.eclipse.org:1883";
 
-    public MeuMqtt(Context context) {
+    public MeuMqtt3(Context context) {
         this.context = context;
         initMqttClient();
     }
 
     public class MyBinder extends Binder {
-        public MeuMqtt getService() {
-            return MeuMqtt.this;
+        public MeuMqtt3 getService() {
+            return MeuMqtt3.this;
         }
     }
 
@@ -111,7 +110,7 @@ public class MeuMqtt extends Service implements MqttCallback, IMqttActionListene
     }
 
     private void setNewMqttClient() {
-        mqttClient = new MqttAndroidClient(MeuMqtt.this, broker_url, clientId, persistence);
+        mqttClient = new MqttAndroidClient(MeuMqtt3.this, broker_url, clientId, persistence);
         mqttClient.setCallback(this);
     }
 

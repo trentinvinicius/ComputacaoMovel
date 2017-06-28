@@ -17,7 +17,7 @@ import android.widget.TextView;
  */
 public class PoteActivity extends AppCompatActivity {
 
-    TextView tvNome, tvTipoIrrigacao, tvValor, tvTH, tvSensor, tvVoltar, tvQntAgua;
+    TextView tvNome, tvTipoIrrigacao, tvValor, tvTH, tvVoltar, tvQntAgua;
     ImageView ivFoto;
     Button btAlterar;
     int codigo, tipo;

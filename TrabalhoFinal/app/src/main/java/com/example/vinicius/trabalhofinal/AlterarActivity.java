@@ -33,7 +33,6 @@ public class AlterarActivity extends AppCompatActivity {
     Button btLimpar, btAlterar;
     TextView tvVoltar, tvTipo, tvAlterarFoto;
     private static final int PICK_IMAGE = 1;
-    String filePath;
     ImageView ivFotoAlterar;
     Bitmap foto;
     BancoController bc;
@@ -141,7 +140,8 @@ public class AlterarActivity extends AppCompatActivity {
         this.btAlterar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                MeuMqtt2.pub();
+                String msg = "Pote: " + Integer.toString(codigo) + ";Tipo: " + Integer.toString(tipo) + ";Valor: " + etValor.getText().toString() + ";QntAgua: " + etQntAgua.getText().toString();
+                MeuMqtt.pub(msg);
                 ByteArrayOutputStream stream = new ByteArrayOutputStream();
                 foto.compress(Bitmap.CompressFormat.PNG, 100, stream);
                 byte[] f = stream.toByteArray();
